@@ -59,7 +59,6 @@ else:
             age = f_col1.number_input("Age (Years)", 18, 100, 35)
             sex = f_col2.selectbox("Sex", ["male", "female"])
             
-            st.markdown("<hr>", unsafe_allow_html=True)
             st.markdown("<span class='demographics-header'>EMPLOYMENT & HOUSING</span>", unsafe_allow_html=True)
             f_col3, f_col4 = st.columns(2)
             
@@ -80,7 +79,6 @@ else:
             }
             housing = f_col4.selectbox("Housing Status", ["own", "free", "rent"], format_func=lambda x: housing_mapping[x])
             
-            st.markdown("<hr>", unsafe_allow_html=True)
             st.markdown("<span class='demographics-header'>FINANCIALS</span>", unsafe_allow_html=True)
             f_col5, f_col6 = st.columns(2)
             
@@ -101,7 +99,6 @@ else:
             }
             checking_account = f_col6.selectbox("Checking Account", ["NA", "little", "moderate", "rich"], format_func=lambda x: check_mapping[x])
             
-            st.markdown("<hr>", unsafe_allow_html=True)
             st.markdown("<span class='demographics-header'>CREDIT REQUEST</span>", unsafe_allow_html=True)
             f_col7, f_col8 = st.columns(2)
             credit_amount = f_col7.number_input("Requested Amount (DM)", min_value=100, value=2500)
@@ -121,7 +118,6 @@ else:
             }
             purpose = st.selectbox("Loan Purpose", purpose_raw, format_func=lambda x: purpose_mapping[x])
             
-            st.markdown("<br>", unsafe_allow_html=True)
             submitted = st.form_submit_button("Run Inference", type="primary", use_container_width=True)
 
     with col2:

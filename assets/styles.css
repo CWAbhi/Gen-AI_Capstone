@@ -66,12 +66,15 @@ h3 {
 /* Small Subheaders */
 .demographics-header {
     color: #6b7280;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
+    margin-top: 12px;
     display: block;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 6px;
 }
 
 /* --- 3. CONTAINERS & FORMS (Glassmorphism & Shadows) --- */
@@ -115,19 +118,35 @@ input[type="text"] {
 /* Focus State for Inputs */
 div[data-baseweb="select"]>div:hover,
 input[type="number"]:focus,
-input[type="number"]:hover {
+input[type="number"]:hover,
+input[type="text"]:focus,
+input[type="text"]:hover {
     border-color: #3b82f6 !important;
     background-color: #ffffff !important;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
     outline: none !important;
 }
 
-/* Input Labels */
+/* Form Layout Tightening - Override Streamlit spacing */
+[data-testid="stForm"] [data-testid="stVerticalBlock"] {
+    gap: 0.5rem !important;
+    /* Reduce massive gap between elements */
+}
+
+/* Reduce widget margins */
+.stSelectbox,
+.stNumberInput,
+.stSlider {
+    margin-bottom: -10px !important;
+}
+
+/* Input Labels Tightening */
 label[data-testid="stWidgetLabel"] {
     font-weight: 500 !important;
-    color: #374151 !important;
-    font-size: 0.9rem !important;
-    margin-bottom: 6px !important;
+    color: #4b5563 !important;
+    font-size: 0.85rem !important;
+    /* Slightly smaller labels */
+    margin-bottom: 2px !important;
 }
 
 /* Sliders */
@@ -204,8 +223,10 @@ div.stAlert:has(div[data-baseweb="notification"] > div[role="alert"] > div > svg
 hr {
     border: none !important;
     height: 1px !important;
-    background-color: #e5e7eb !important;
-    margin: 24px 0 !important;
+    background-color: #f3f4f6 !important;
+    /* Lighter divider */
+    margin: 8px 0 16px 0 !important;
+    /* Tighter margins */
 }
 
 /* --- 8. EMPTY STATE PLACEHOLDER --- */
