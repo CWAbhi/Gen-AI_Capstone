@@ -107,7 +107,16 @@ div[data-baseweb="select"]>div {
     background-color: #f9fafb !important;
     border: 1px solid #d1d5db !important;
     border-radius: 8px !important;
+    color: #1f2937 !important;
+    font-size: 0.95rem !important;
+    padding: 2px 8px !important;
+    /* Adding minimal padding to secure height */
     transition: all 0.2s ease !important;
+}
+
+div[data-baseweb="select"] div[data-testid="stMarkdownContainer"] {
+    color: #1f2937 !important;
+    /* Ensure the text inside the select is explicitly dark */
 }
 
 input[type="number"],
