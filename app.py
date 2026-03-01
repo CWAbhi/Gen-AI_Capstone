@@ -189,7 +189,7 @@ else:
                     }
                 ))
                 fig.update_layout(height=400, margin=dict(l=10, r=10, t=30, b=10), paper_bgcolor='rgba(0,0,0,0)', font={'family': 'Inter'})
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
         else:
             st.markdown("""
             <div class="empty-state">
