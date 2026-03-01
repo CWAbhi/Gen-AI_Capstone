@@ -103,7 +103,13 @@ div[data-testid="stVerticalBlock"]>div>div[data-testid="stVerticalBlock"]>div[st
 
 /* --- 4. INPUT WIDGETS --- */
 /* Number Inputs, Selectboxes, Text Inputs */
-div[data-baseweb="select"]>div,
+div[data-baseweb="select"]>div {
+    background-color: #f9fafb !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
 input[type="number"],
 input[type="text"] {
     background-color: #f9fafb !important;
@@ -111,12 +117,13 @@ input[type="text"] {
     border-radius: 8px !important;
     color: #1f2937 !important;
     font-size: 0.95rem !important;
-    padding: 4px 12px !important;
+    padding: 8px 12px !important;
     transition: all 0.2s ease !important;
 }
 
 /* Focus State for Inputs */
 div[data-baseweb="select"]>div:hover,
+div[data-baseweb="select"]>div:focus-within,
 input[type="number"]:focus,
 input[type="number"]:hover,
 input[type="text"]:focus,
@@ -129,15 +136,15 @@ input[type="text"]:hover {
 
 /* Form Layout Tightening - Override Streamlit spacing */
 [data-testid="stForm"] [data-testid="stVerticalBlock"] {
-    gap: 0.5rem !important;
-    /* Reduce massive gap between elements */
+    gap: 1rem !important;
+    /* Softened gap to prevent overlapping */
 }
 
-/* Reduce widget margins */
+/* Clean up widget margins without breaking them */
 .stSelectbox,
 .stNumberInput,
 .stSlider {
-    margin-bottom: -10px !important;
+    margin-bottom: 0px !important;
 }
 
 /* Input Labels Tightening */
