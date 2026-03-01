@@ -74,11 +74,11 @@ The application will open automatically in your browser.
 
 ## Team Contribution
 
-| Member                     | Contribution                                |
-| ------------------------   | ------------------------------------------- |
-| Abhijeet Dey (2401010014)  | Model Development, Streamlit UI, Deployment |
-| Anshika Seth (2401010080)  | Data Cleaning & EDA                         |
-| Aditya Ranjan (2401010035) | Documentation & Testing                     |
+| Member                     | Contribution                                                              |
+| -------------------------- | ------------------------------------------------------------------------- |
+| Anshika Seth (2401010080)  | Data Cleaning & EDA, Complete Model Development, Streamlit UI, Deployment |
+| Abhijeet Dey (2401010014)  | Helped Model Development, Deployment                                      |
+| Aditya Ranjan (2401010035) | Documentation & Testing                                                   |
 
 
 ## Conclusion
