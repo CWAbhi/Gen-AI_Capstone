@@ -156,11 +156,11 @@ else:
                 
                 with st.container(border=False):
                     if risk_score > 0.5:
-                        st.error("### ⚠️ Application Flagged: HIGH RISK")
+                        st.error("### Application Flagged: HIGH RISK")
                         st.markdown(f"**Default Probability:** `{risk_score*100:.1f}%`")
                         st.markdown("The profile indicates a high likelihood of defaulting. Suggest requesting additional collateral or rejecting.")
                     else:
-                        st.success("### ✅ Application Cleared: LOW RISK")
+                        st.success("### Application Cleared: LOW RISK")
                         st.markdown(f"**Default Probability:** `{risk_score*100:.1f}%`")
                         st.markdown("The profile aligns with healthy borrower metrics. Pre-approval recommended.")
                     

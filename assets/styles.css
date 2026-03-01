@@ -167,21 +167,22 @@ button[kind="primary"]:active {
 
 /* --- 6. ALERTS & STATUS MESSAGES --- */
 /* Success Banner (Low Risk) */
-[data-testid="stAlert"]:has(div:contains("✅")) {
-    background-color: #ecfdf5 !important;
-    border: 1px solid #10b981 !important;
-    color: #065f46 !important;
+[data-testid="stAlert"] {
     border-radius: 12px !important;
     padding: 20px !important;
 }
 
+div.stAlert:has(div[data-baseweb="notification"] > div[role="alert"] > div > svg[aria-label="check"]) {
+    background-color: #ecfdf5 !important;
+    border: 1px solid #10b981 !important;
+    color: #065f46 !important;
+}
+
 /* Error Banner (High Risk) */
-[data-testid="stAlert"]:has(div:contains("⚠️")) {
+div.stAlert:has(div[data-baseweb="notification"] > div[role="alert"] > div > svg[aria-label="error"]) {
     background-color: #fef2f2 !important;
     border: 1px solid #ef4444 !important;
     color: #991b1b !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
 }
 
 /* Custom Alert Headings */
