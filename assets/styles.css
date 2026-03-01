@@ -114,6 +114,11 @@ div[data-baseweb="select"]>div {
     transition: all 0.2s ease !important;
 }
 
+div[data-baseweb="select"] * {
+    color: #1f2937 !important;
+    /* Force all text inside the select to be dark */
+}
+
 div[data-baseweb="select"] div[data-testid="stMarkdownContainer"] {
     color: #1f2937 !important;
     /* Ensure the text inside the select is explicitly dark */
