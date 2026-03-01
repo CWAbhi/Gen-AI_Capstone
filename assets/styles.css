@@ -9,8 +9,15 @@ html,
 body,
 [class*="css"] {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    color: #1a1f36;
+    color: #111827 !important;
     /* Deep Stripe-like blue-gray */
+}
+
+/* Force markdown elements to be black to override dark mode defaults */
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown span {
+    color: #111827 !important;
 }
 
 /* Base App Background */

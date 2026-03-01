@@ -164,7 +164,7 @@ else:
                         st.markdown(f"**Default Probability:** `{risk_score*100:.1f}%`")
                         st.markdown("The profile aligns with healthy borrower metrics. Pre-approval recommended.")
                     
-                    st.markdown(f"<span style='color: #9ca3af; font-size: 12px;'>Inferred via: {model_name} • Algorithm Pipeline Active</span>", unsafe_allow_html=True)
+                    st.markdown(f"<span style='color: #111827; font-size: 12px; font-weight: 500;'>Inferred via: {model_name} • Algorithm Pipeline Active</span>", unsafe_allow_html=True)
 
                 fig = go.Figure(go.Indicator(
                     mode="gauge+number",
