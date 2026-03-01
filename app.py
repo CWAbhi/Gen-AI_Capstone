@@ -62,21 +62,64 @@ else:
             st.markdown("<hr>", unsafe_allow_html=True)
             st.markdown("<span class='demographics-header'>EMPLOYMENT & HOUSING</span>", unsafe_allow_html=True)
             f_col3, f_col4 = st.columns(2)
-            job = f_col3.selectbox("Job Category", [0, 1, 2, 3], format_func=lambda x: ['Unskilled (Resident)', 'Unskilled (Non-resident)', 'Skilled', 'Highly Skilled'][x])
-            housing = f_col4.selectbox("Housing Status", ["own", "free", "rent"])
+            
+            # Map the raw indices [0,1,2,3] to polished, grammatically correct and distinct titles
+            job_mapping = {
+                0: 'Unemployed / Unskilled (Non-Resident)',
+                1: 'Unskilled (Resident)',
+                2: 'Skilled Employee / Official',
+                3: 'Management / Highly Skilled / Self-Employed'
+            }
+            job = f_col3.selectbox("Job Category", [0, 1, 2, 3], format_func=lambda x: job_mapping[x])
+            
+            # Map raw strings to Title Case strings
+            housing_mapping = {
+                "own": "Owns Property",
+                "free": "Lives For Free",
+                "rent": "Renting"
+            }
+            housing = f_col4.selectbox("Housing Status", ["own", "free", "rent"], format_func=lambda x: housing_mapping[x])
             
             st.markdown("<hr>", unsafe_allow_html=True)
             st.markdown("<span class='demographics-header'>FINANCIALS</span>", unsafe_allow_html=True)
             f_col5, f_col6 = st.columns(2)
-            saving_accounts = f_col5.selectbox("Savings Account", ["NA", "little", "moderate", "quite rich", "rich"])
-            checking_account = f_col6.selectbox("Checking Account", ["NA", "little", "moderate", "rich"])
+            
+            account_mapping = {
+                "NA": "No Account",
+                "little": "Little (< 200 DM)",
+                "moderate": "Moderate (200 - 1000 DM)",
+                "quite rich": "Rich (1000 - 2000 DM)",
+                "rich": "Very Rich (> 2000 DM)"
+            }
+            saving_accounts = f_col5.selectbox("Savings Account", ["NA", "little", "moderate", "quite rich", "rich"], format_func=lambda x: account_mapping[x])
+            
+            check_mapping = {
+                "NA": "No Checking Account",
+                "little": "Negative / Little Balance",
+                "moderate": "Moderate Balance",
+                "rich": "High Balance"
+            }
+            checking_account = f_col6.selectbox("Checking Account", ["NA", "little", "moderate", "rich"], format_func=lambda x: check_mapping[x])
             
             st.markdown("<hr>", unsafe_allow_html=True)
             st.markdown("<span class='demographics-header'>CREDIT REQUEST</span>", unsafe_allow_html=True)
             f_col7, f_col8 = st.columns(2)
             credit_amount = f_col7.number_input("Requested Amount (DM)", min_value=100, value=2500)
             duration = f_col8.slider("Term Duration (Months)", 4, 72, 24)
-            purpose = st.selectbox("Loan Purpose", ["radio/TV", "education", "furniture/equipment", "car", "business", "domestic appliances", "repairs", "vacation/others"])
+            
+            # Use Capitalized/Professional names for purpose 
+            purpose_raw = ["radio/TV", "education", "furniture/equipment", "car", "business", "domestic appliances", "repairs", "vacation/others"]
+            purpose_mapping = {
+                "radio/TV": "Electronics (Radio/TV)",
+                "education": "Education Funding",
+                "furniture/equipment": "Furniture / Equipment",
+                "car": "Vehicle Purchase",
+                "business": "Business Venture",
+                "domestic appliances": "Domestic Appliances",
+                "repairs": "Home Repairs",
+                "vacation/others": "Vacation / Other"
+            }
+            purpose = st.selectbox("Loan Purpose", purpose_raw, format_func=lambda x: purpose_mapping[x])
             
             st.markdown("<br>", unsafe_allow_html=True)
             submitted = st.form_submit_button("Run Inference", type="primary", use_container_width=True)
